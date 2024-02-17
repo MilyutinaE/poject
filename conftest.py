@@ -61,3 +61,8 @@ def base_url(request):
     executor = request.config.getoption("--executor")
     url = f"http://{executor}"
     return url
+
+
+@pytest.fixture(scope="session")
+def api_url():
+    return "https://api.openbrewerydb.org/v1/breweries"
