@@ -1,5 +1,5 @@
 import datetime
-
+from selenium.webdriver.chrome.options import Options
 import pytest
 from selenium import webdriver
 import logging
@@ -45,6 +45,23 @@ def browser(request):
                 options.add_argument('--headless=new')
             options.add_argument('--enable-chrome-browser-cloud-management')
             driver = webdriver.Edge(options=options)
+    else:
+        capabilities = {
+            "browserName": browser,
+            "acceptInsecureCerts": True,
+            "selenoid:options": {
+                "enableVNC": True,
+                "enableVideo": False
+            }
+        }
+        options = Options()
+        for k, v in capabilities.items():
+            options.set_capability(k, v)
+        driver = webdriver.Remote(
+            command_executor=f"http://{executor}:4444/wd/hub",
+            options=options
+        )
+
 
     # driver.log_level = log_level
     # driver.logger = logger

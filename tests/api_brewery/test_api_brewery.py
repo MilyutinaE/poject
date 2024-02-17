@@ -29,15 +29,6 @@ def test_obdb_id(obdb_id, name, api_url):
     assert json_name["name"] == name
 
 
-# @pytest.mark.parametrize("ids", [("701239cb-5319-4d2e-92c1-129ab0b3b440,06e9fffb-e820-45c9-b107-b52b51013e8f")
-#                                            ])
-# def test_by_ids(ids, api_url):
-#     "Проверяем, что в ответе список только с переданными айди"
-#     r = requests.get(api_url + "?by_ids=" + f"/{ids}")
-#     assert r.status_code == 200
-#     json_result = r.json()
-
-
 @pytest.mark.parametrize("name", ('dog', 'boss', 'dream'))
 def test_get_names_with_word(name, api_url):
     "Делаем поиск по dog в названии пивнухи и проверяем, что в ответе все названия с dog"
