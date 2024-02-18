@@ -76,7 +76,7 @@ def test_by_name(by_name, api_url):
     r = requests.get(api_url, params=query)
     assert r.status_code == 200
     json_names = r.json()
-    assert json_names[0]['name'] == by_name   #Доступ к элементам списка осуществляется по индексу, без [0] не работает
+    assert json_names[0]['name'] == by_name   # Доступ к элементам списка осуществляется по индексу, без [0] не работает
 
 
 @pytest.mark.parametrize("by_type", ('micro', 'nano', 'regional', 'brewpub', 'large'))
@@ -86,7 +86,7 @@ def test_by_type(by_type, api_url):
     r = requests.get(api_url, params=query)
     assert r.status_code == 200
     json_types = r.json()
-    assert json_types[0]['brewery_type'] == by_type # json_types[0] - первая пивоварня в списке
+    assert json_types[0]['brewery_type'] == by_type  # json_types[0] - первая пивоварня в списке
 
 
 @pytest.mark.parametrize("by_country", ('south_korea', 'germany'))

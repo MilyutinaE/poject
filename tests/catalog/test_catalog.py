@@ -1,13 +1,6 @@
 import allure
-from models.admin import username, passwod
-from pages_and_components.components.header_component import HeaderComponent
-from pages_and_components.pages.admin.admin_login_page import AdminLoginPage
 from pages_and_components.pages.catalog_page import CatalogPage
-from pages_and_components.pages.product_page import ProductPage
-from pages_and_components.pages.registration_page import RegistrationPage
-from pages_and_components.pages.main_page import MainPage
 from pages_and_components.components.catalog_menu_component import CatalogMenuComponent
-import pytest
 
 
 @allure.severity(allure.severity_level.NORMAL)

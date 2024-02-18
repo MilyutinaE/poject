@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 import allure
 
+
 class MyAccountPage(BasePage):
     def __init__(self, browser):
         self.driver = browser

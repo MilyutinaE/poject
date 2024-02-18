@@ -1,18 +1,16 @@
-import datetime
 from selenium.webdriver.chrome.options import Options
 import pytest
 from selenium import webdriver
-import logging
 
 
 def pytest_addoption(parser):
     parser.addoption("--browser", default="chrome", help="Browser. Default option is chrome")
     parser.addoption("--headless", action="store_true", help="headless режим. только в False(по умолчанию) или True")
     parser.addoption("--url", help="URL")
-# parser.addoption("--log_level", action="store", default="INFO")
+    # parser.addoption("--log_level", action="store", default="INFO")
     parser.addoption("--remote", default=False)
     parser.addoption("--executor", default="localhost")
-#   parser.addoption("--user", help="username for remote virtual machine")
+    # parser.addoption("--user", help="username for remote virtual machine")
     parser.addoption("--password", help="password for remote virtual machine")
 
 
@@ -29,7 +27,6 @@ def browser(request):
     # file_handler.setFormatter(logging.Formatter('%(levelname)s %(message)s'))
     # logger.addHandler(file_handler)
     # logger.setLevel(level=log_level)
-
 
     if not remote:
         driver = None
@@ -61,7 +58,6 @@ def browser(request):
             command_executor=f"http://{executor}:4444/wd/hub",
             options=options
         )
-
 
     # driver.log_level = log_level
     # driver.logger = logger

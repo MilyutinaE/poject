@@ -3,7 +3,6 @@ import allure
 from pages_and_components.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
-import re
 
 
 class CurrencyComponent(BasePage):

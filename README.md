@@ -9,3 +9,7 @@ pytest --headless
 
 - selenoid (нужно прописывать айпи, иначе тесты опенкарта будут падать)
 pytest --remote=True --executor="172.18.240.1"
+
+
+
+#pytest tests\test_main_page.py

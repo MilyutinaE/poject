@@ -1,8 +1,8 @@
 from pages_and_components.base_page import BasePage
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
 import allure
 import re
+
 
 class ShoppingCartPage(BasePage):
     def __init__(self, browser):
@@ -19,5 +19,5 @@ class ShoppingCartPage(BasePage):
         total_price = self.get_element_by_locator(self.TOTAL_PRICE)
         total_price_text = total_price.text
         # Используем регулярное выражение для извлечения только цифр и точек
-        price = numbers_only = re.sub(r'[^0-9.]', '', total_price_text)
+        price = re.sub(r'[^0-9.]', '', total_price_text)
         return price

@@ -35,9 +35,3 @@ class AdminProductsPage(BasePage):
     def click_delete(self,):
         self.click(self.DELETE)
         self.accept_alert()
-
-
-# @allure.step("Delete iPhone")
-#     def click_delete(self):
-#         self.click(self.DELETE)
-#         self.accept_alert()
