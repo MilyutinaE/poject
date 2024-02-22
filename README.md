@@ -10,6 +10,6 @@ pytest --headless
 - selenoid (нужно прописывать айпи, иначе тесты опенкарта будут падать)
 pytest --remote=True --executor="172.18.240.1"
 
-
+D:\allure\allure-2.26.0\bin\allure.bat generate allure-results\ --clean
 
 #pytest tests\test_main_page.py
